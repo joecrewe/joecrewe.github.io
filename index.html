@@ -1,219 +1,263 @@
 
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Joe Crewe – Ninja JKL</title>
-  <style>
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      background: #111;
-      color: #eee;
-    }
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.9);
-      z-index: 999;
-      display: flex;
-      justify-content: center;
-      padding: 1rem 0;
-    }
-    nav a {
-      color: #0af;
-      text-decoration: none;
-      margin: 0 1.5rem;
-      font-weight: bold;
-      font-size: 1rem;
-      transition: color 0.3s ease;
-    }
-    nav a:hover {
-      color: #fff;
-    }
-    header {
-      height: 100vh;
-      background: url('landing.jpg') center/cover no-repeat;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      position: relative;
-    }
-    header::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.6);
-    }
-    header h1 {
-      position: relative;
-      font-size: 3.5rem;
-      color: white;
-      z-index: 1;
-    }
-    section {
-      padding: 5rem 2rem;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    section h2 {
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-      border-bottom: 2px solid #444;
-      padding-bottom: 0.5rem;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-    .client-card {
-      position: relative;
-      overflow: hidden;
-      border-radius: 6px;
-    }
-    .client-card img {
-      display: block;
-      width: 100%;
-      height: auto;
-      transition: transform 0.4s ease;
-    }
-    .client-card:hover img {
-      transform: scale(1.05);
-    }
-    .overlay {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.75);
-      color: #fff;
-      opacity: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 1rem;
-      transition: opacity 0.3s ease;
-    }
-    .client-card:hover .overlay {
-      opacity: 1;
-    }
-    .overlay h3 {
-      font-size: clamp(1rem, 2.5vw, 1.2rem);
-      line-height: 1.3;
-      word-break: break-word;
-      max-width: 90%;
-      margin: 0 0 0.5rem;
-    }
-    .overlay p {
-      font-size: clamp(0.85rem, 2vw, 1rem);
-      line-height: 1.4;
-      word-break: break-word;
-      max-width: 90%;
-      margin: 0;
-    }
-    .contact-form input, .contact-form textarea {
-      width: 100%;
-      padding: 0.75rem;
-      margin-bottom: 1rem;
-      border-radius: 5px;
-      border: none;
-      font-family: inherit;
-    }
-    .contact-form button {
-      background: #0af;
-      color: #000;
-      padding: 0.75rem 1.5rem;
-      border: none;
-      font-size: 1rem;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      color: #777;
-    }
-    section[id] { scroll-margin-top: 80px; }
-  </style>
-</head>
-<body>
-
+<html lang="en"><head><meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Joe Crewe – Ninja JKL</title>
+<style>
+body { margin: 0; font-family: sans-serif; background: #111; color: #fff; }
+nav {
+  position: fixed; top: 0; width: 100%; background: #000; z-index: 100;
+  display: flex; justify-content: center; padding: 1rem;
+}
+nav a {
+  color: #0af; text-decoration: none; margin: 0 1.5rem; font-weight: bold;
+}
+header {
+  height: 100vh; background: url('landing.jpg') center/cover no-repeat;
+  display: flex; align-items: center; justify-content: center; text-align: center;
+  position: relative;
+}
+header::before { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,0.6); }
+header h1 { position: relative; color: white; font-size: 3.5rem; z-index: 1; }
+section { padding: 5rem 2rem; max-width: 1000px; margin: 0 auto; }
+.grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+.client-card {
+  position: relative; overflow: hidden; border-radius: 6px;
+}
+.client-card img {
+  width: 100%; height: auto; display: block; transition: transform 0.3s;
+}
+.client-card:hover img { transform: scale(1.05); }
+.overlay {
+  position: absolute; inset: 0; background: rgba(0,0,0,0.75); color: white;
+  opacity: 0; display: flex; align-items: center; justify-content: center;
+  text-align: center; padding: 1rem; transition: opacity 0.3s ease;
+}
+.client-card:hover .overlay { opacity: 1; }
+.overlay h3 {
+  font-size: clamp(1rem, 2.5vw, 1.2rem); line-height: 1.3; word-break: break-word;
+  max-width: 90%; margin: 0 0 0.5rem;
+}
+.overlay p {
+  font-size: clamp(0.85rem, 2vw, 1rem); line-height: 1.4;
+  word-break: break-word; max-width: 90%; margin: 0;
+}
+footer { text-align: center; padding: 2rem; color: #888; }
+section[id] { scroll-margin-top: 80px; }
+</style></head><body>
 <nav>
-  <a href="#clients">Clients</a>
   <a href="#about">About</a>
+  <a href="#clients">Clients</a>
   <a href="#contact">Contact</a>
 </nav>
-
-<header>
-  <h1>Joe Crewe – Ninja JKL</h1>
-</header>
-
-<section id="clients">
-  <h2>Clients</h2>
-  <div class="grid">
-    <div class="client-card">
-      <img src="clients_images/susan_calman_antarctica.jpg" alt="Susan Calman">
-      <div class="overlay">
-        <h3>Cruising with Susan Calman</h3>
-        <p>Offline Editor<br>10×60” – Channel 5 / Daisybeck</p>
-      </div>
-    </div>
-    <div class="client-card">
-      <img src="clients_images/repair_shop_on_the_road.jpg" alt="Repair Shop">
-      <div class="overlay">
-        <h3>Repair Shop on the Road</h3>
-        <p>Offline Editor<br>3×45” – BBC / Ricochet</p>
-      </div>
-    </div>
-    <div class="client-card">
-      <img src="clients_images/worlds_amazing_walks.jpg" alt="Robson Green">
-      <div class="overlay">
-        <h3>World’s Amazing Walks</h3>
-        <p>Offline Editor<br>2×45” – BBC Studios / UKTV</p>
-      </div>
-    </div>
-    <div class="client-card">
-      <img src="clients_images/food_unwrapped.jpg" alt="Food Unwrapped">
-      <div class="overlay">
-        <h3>Food Unwrapped</h3>
-        <p>Offline Editor<br>2×30” – Channel 4 / Ricochet</p>
-      </div>
-    </div>
-    <div class="client-card">
-      <img src="clients_images/laurence_llewelyn_bowen.jpg" alt="LLB">
-      <div class="overlay">
-        <h3>Laurence Llewelyn-Bowen Series</h3>
-        <p>Offline Editor<br>Various – Channel 5</p>
-      </div>
-    </div>
-  </div>
-</section>
-
+<header><h1>Joe Crewe – Ninja JKL</h1></header>
 <section id="about">
   <h2>About Me</h2>
-  <p>I'm Joe Crewe – a seasoned offline editor based in Scotland, with 20 years' experience delivering broadcast and branded content. From documentary and factual to entertainment and travel, I shape engaging stories with style, speed, and precision. I work remotely or on-site across Glasgow, London and beyond.</p>
+  <p>I’m Joe Crewe, an offline editor based in Scotland with 20 years of experience delivering factual, entertainment, and branded content for major UK broadcasters and corporate clients. I cut with rhythm, speed and precision — and I’m equally confident working solo or in collaboration with producers and execs. Clients include BBC Studios, Channel 5, Channel 4, Red Bull, Shell, and many more.</p>
 </section>
+<section id="clients">
+  <h2>Broadcast Clients</h2><div class="grid">
 
+    <div class="client-card">
+      <img src="clients_images/client1.jpg" alt="Broadcast Project 1">
+      <div class="overlay"><h3>Broadcast Project 1</h3><p>Offline Editor<br>BBC / Channel 4</p></div>
+    </div>
+    <div class="client-card">
+      <img src="clients_images/client2.jpg" alt="Broadcast Project 2">
+      <div class="overlay"><h3>Broadcast Project 2</h3><p>Offline Editor<br>BBC / Channel 4</p></div>
+    </div>
+    <div class="client-card">
+      <img src="clients_images/client3.jpg" alt="Broadcast Project 3">
+      <div class="overlay"><h3>Broadcast Project 3</h3><p>Offline Editor<br>BBC / Channel 4</p></div>
+    </div>
+    <div class="client-card">
+      <img src="clients_images/client4.jpg" alt="Broadcast Project 4">
+      <div class="overlay"><h3>Broadcast Project 4</h3><p>Offline Editor<br>BBC / Channel 4</p></div>
+    </div>
+    <div class="client-card">
+      <img src="clients_images/client5.jpg" alt="Broadcast Project 5">
+      <div class="overlay"><h3>Broadcast Project 5</h3><p>Offline Editor<br>BBC / Channel 4</p></div>
+    </div>
+    <div class="client-card">
+      <img src="clients_images/client6.jpg" alt="Broadcast Project 6">
+      <div class="overlay"><h3>Broadcast Project 6</h3><p>Offline Editor<br>BBC / Channel 4</p></div>
+    </div>
+    <div class="client-card">
+      <img src="clients_images/client7.jpg" alt="Broadcast Project 7">
+      <div class="overlay"><h3>Broadcast Project 7</h3><p>Offline Editor<br>BBC / Channel 4</p></div>
+    </div>
+    <div class="client-card">
+      <img src="clients_images/client8.jpg" alt="Broadcast Project 8">
+      <div class="overlay"><h3>Broadcast Project 8</h3><p>Offline Editor<br>BBC / Channel 4</p></div>
+    </div>
+    <div class="client-card">
+      <img src="clients_images/client9.jpg" alt="Broadcast Project 9">
+      <div class="overlay"><h3>Broadcast Project 9</h3><p>Offline Editor<br>BBC / Channel 4</p></div>
+    </div>
+    <div class="client-card">
+      <img src="clients_images/client10.jpg" alt="Broadcast Project 10">
+      <div class="overlay"><h3>Broadcast Project 10</h3><p>Offline Editor<br>BBC / Channel 4</p></div>
+    </div>
+    <div class="client-card">
+      <img src="clients_images/client11.jpg" alt="Broadcast Project 11">
+      <div class="overlay"><h3>Broadcast Project 11</h3><p>Offline Editor<br>BBC / Channel 4</p></div>
+    </div>
+    <div class="client-card">
+      <img src="clients_images/client12.jpg" alt="Broadcast Project 12">
+      <div class="overlay"><h3>Broadcast Project 12</h3><p>Offline Editor<br>BBC / Channel 4</p></div>
+    </div>
+    <div class="client-card">
+      <img src="clients_images/client13.jpg" alt="Broadcast Project 13">
+      <div class="overlay"><h3>Broadcast Project 13</h3><p>Offline Editor<br>BBC / Channel 4</p></div>
+    </div>
+    <div class="client-card">
+      <img src="clients_images/client14.jpg" alt="Broadcast Project 14">
+      <div class="overlay"><h3>Broadcast Project 14</h3><p>Offline Editor<br>BBC / Channel 4</p></div>
+    </div>
+    <div class="client-card">
+      <img src="clients_images/client15.jpg" alt="Broadcast Project 15">
+      <div class="overlay"><h3>Broadcast Project 15</h3><p>Offline Editor<br>BBC / Channel 4</p></div>
+    </div>
+    <div class="client-card">
+      <img src="clients_images/client16.jpg" alt="Broadcast Project 16">
+      <div class="overlay"><h3>Broadcast Project 16</h3><p>Offline Editor<br>BBC / Channel 4</p></div>
+    </div>
+    <div class="client-card">
+      <img src="clients_images/client17.jpg" alt="Broadcast Project 17">
+      <div class="overlay"><h3>Broadcast Project 17</h3><p>Offline Editor<br>BBC / Channel 4</p></div>
+    </div>
+    <div class="client-card">
+      <img src="clients_images/client18.jpg" alt="Broadcast Project 18">
+      <div class="overlay"><h3>Broadcast Project 18</h3><p>Offline Editor<br>BBC / Channel 4</p></div>
+    </div>
+    <div class="client-card">
+      <img src="clients_images/client19.jpg" alt="Broadcast Project 19">
+      <div class="overlay"><h3>Broadcast Project 19</h3><p>Offline Editor<br>BBC / Channel 4</p></div>
+    </div>
+    <div class="client-card">
+      <img src="clients_images/client20.jpg" alt="Broadcast Project 20">
+      <div class="overlay"><h3>Broadcast Project 20</h3><p>Offline Editor<br>BBC / Channel 4</p></div>
+    </div>
+    <div class="client-card">
+      <img src="clients_images/client21.jpg" alt="Broadcast Project 21">
+      <div class="overlay"><h3>Broadcast Project 21</h3><p>Offline Editor<br>BBC / Channel 4</p></div>
+    </div>
+    <div class="client-card">
+      <img src="clients_images/client22.jpg" alt="Broadcast Project 22">
+      <div class="overlay"><h3>Broadcast Project 22</h3><p>Offline Editor<br>BBC / Channel 4</p></div>
+    </div>
+    <div class="client-card">
+      <img src="clients_images/client23.jpg" alt="Broadcast Project 23">
+      <div class="overlay"><h3>Broadcast Project 23</h3><p>Offline Editor<br>BBC / Channel 4</p></div>
+    </div>
+    <div class="client-card">
+      <img src="clients_images/client24.jpg" alt="Broadcast Project 24">
+      <div class="overlay"><h3>Broadcast Project 24</h3><p>Offline Editor<br>BBC / Channel 4</p></div>
+    </div>
+    <div class="client-card">
+      <img src="clients_images/client25.jpg" alt="Broadcast Project 25">
+      <div class="overlay"><h3>Broadcast Project 25</h3><p>Offline Editor<br>BBC / Channel 4</p></div>
+    </div>
+    <div class="client-card">
+      <img src="clients_images/client26.jpg" alt="Broadcast Project 26">
+      <div class="overlay"><h3>Broadcast Project 26</h3><p>Offline Editor<br>BBC / Channel 4</p></div>
+    </div>
+    <div class="client-card">
+      <img src="clients_images/client27.jpg" alt="Broadcast Project 27">
+      <div class="overlay"><h3>Broadcast Project 27</h3><p>Offline Editor<br>BBC / Channel 4</p></div>
+    </div>
+    <div class="client-card">
+      <img src="clients_images/client28.jpg" alt="Broadcast Project 28">
+      <div class="overlay"><h3>Broadcast Project 28</h3><p>Offline Editor<br>BBC / Channel 4</p></div>
+    </div>
+    <div class="client-card">
+      <img src="clients_images/client29.jpg" alt="Broadcast Project 29">
+      <div class="overlay"><h3>Broadcast Project 29</h3><p>Offline Editor<br>BBC / Channel 4</p></div>
+    </div>
+    <div class="client-card">
+      <img src="clients_images/client30.jpg" alt="Broadcast Project 30">
+      <div class="overlay"><h3>Broadcast Project 30</h3><p>Offline Editor<br>BBC / Channel 4</p></div>
+    </div>
+    <div class="client-card">
+      <img src="clients_images/client31.jpg" alt="Broadcast Project 31">
+      <div class="overlay"><h3>Broadcast Project 31</h3><p>Offline Editor<br>BBC / Channel 4</p></div>
+    </div>
+    <div class="client-card">
+      <img src="clients_images/client32.jpg" alt="Broadcast Project 32">
+      <div class="overlay"><h3>Broadcast Project 32</h3><p>Offline Editor<br>BBC / Channel 4</p></div>
+    </div>
+    <div class="client-card">
+      <img src="clients_images/client33.jpg" alt="Broadcast Project 33">
+      <div class="overlay"><h3>Broadcast Project 33</h3><p>Offline Editor<br>BBC / Channel 4</p></div>
+    </div>
+    <div class="client-card">
+      <img src="clients_images/client34.jpg" alt="Broadcast Project 34">
+      <div class="overlay"><h3>Broadcast Project 34</h3><p>Offline Editor<br>BBC / Channel 4</p></div>
+    </div>
+    <div class="client-card">
+      <img src="clients_images/client35.jpg" alt="Corporate Client 1">
+      <div class="overlay"><h3>Corporate Client 1</h3><p>Branded Content / Corporate</p></div>
+    </div>
+    <div class="client-card">
+      <img src="clients_images/client36.jpg" alt="Corporate Client 2">
+      <div class="overlay"><h3>Corporate Client 2</h3><p>Branded Content / Corporate</p></div>
+    </div>
+    <div class="client-card">
+      <img src="clients_images/client37.jpg" alt="Corporate Client 3">
+      <div class="overlay"><h3>Corporate Client 3</h3><p>Branded Content / Corporate</p></div>
+    </div>
+    <div class="client-card">
+      <img src="clients_images/client38.jpg" alt="Corporate Client 4">
+      <div class="overlay"><h3>Corporate Client 4</h3><p>Branded Content / Corporate</p></div>
+    </div>
+    <div class="client-card">
+      <img src="clients_images/client39.jpg" alt="Corporate Client 5">
+      <div class="overlay"><h3>Corporate Client 5</h3><p>Branded Content / Corporate</p></div>
+    </div>
+    <div class="client-card">
+      <img src="clients_images/client40.jpg" alt="Corporate Client 6">
+      <div class="overlay"><h3>Corporate Client 6</h3><p>Branded Content / Corporate</p></div>
+    </div>
+    <div class="client-card">
+      <img src="clients_images/client41.jpg" alt="Corporate Client 7">
+      <div class="overlay"><h3>Corporate Client 7</h3><p>Branded Content / Corporate</p></div>
+    </div>
+    <div class="client-card">
+      <img src="clients_images/client42.jpg" alt="Corporate Client 8">
+      <div class="overlay"><h3>Corporate Client 8</h3><p>Branded Content / Corporate</p></div>
+    </div>
+    <div class="client-card">
+      <img src="clients_images/client43.jpg" alt="Corporate Client 9">
+      <div class="overlay"><h3>Corporate Client 9</h3><p>Branded Content / Corporate</p></div>
+    </div>
+    <div class="client-card">
+      <img src="clients_images/client44.jpg" alt="Corporate Client 10">
+      <div class="overlay"><h3>Corporate Client 10</h3><p>Branded Content / Corporate</p></div>
+    </div>
+    <div class="client-card">
+      <img src="clients_images/client45.jpg" alt="Corporate Client 11">
+      <div class="overlay"><h3>Corporate Client 11</h3><p>Branded Content / Corporate</p></div>
+    </div>
+    <div class="client-card">
+      <img src="clients_images/client46.jpg" alt="Corporate Client 12">
+      <div class="overlay"><h3>Corporate Client 12</h3><p>Branded Content / Corporate</p></div>
+    </div>
+    <div class="client-card">
+      <img src="clients_images/client47.jpg" alt="Corporate Client 13">
+      <div class="overlay"><h3>Corporate Client 13</h3><p>Branded Content / Corporate</p></div>
+    </div>
+</div></section>
 <section id="contact">
   <h2>Contact</h2>
-  <form class="contact-form" name="contact" method="POST" data-netlify="true">
+  <form name="contact" method="POST" data-netlify="true">
     <input type="text" name="name" placeholder="Your Name" required />
     <input type="email" name="email" placeholder="Your Email" required />
-    <textarea name="message" placeholder="How can I help?" rows="5" required></textarea>
+    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
     <button type="submit">Send</button>
   </form>
 </section>
-
-<footer>
-  &copy; 2025 Joe Crewe · Ninja JKL · Based in Scotland
-</footer>
-
-</body>
-</html>
+<footer>&copy; 2025 Joe Crewe · Ninja JKL</footer>
+</body></html>
